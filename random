@@ -1,0 +1,37 @@
+////////////////////////////////////////Practice C# Classes///////////////////////////////////////////////////////////
+public class Vehicle
+{
+     public int numPassengers;
+     public double distance = 0.0;
+
+     public Vehicle(int val)
+     {
+          numPassengers = val;
+     }
+
+     public void Move(double miles)
+     {
+        distance += miles;
+     }
+
+}
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        //We create two separate objects of class-Vehicle
+        Vehicle car = new Vehicle(5);
+        Vehicle bike = new Vehicle(1);
+
+        //Notice they both have the same starting distance travelled
+        Console.WriteLine(car.distance); //Prints 0
+        Console.WriteLine(bike.distance); //Also Prints 0
+
+        //The Move method however only effects the distance of the object it is referencing!!
+        car.Move(70.8);
+        Console.WriteLine(car.distance); //Now is printing 70.8
+        Console.WriteLine(bike.distance); //Still prints 0
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
